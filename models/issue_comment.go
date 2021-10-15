@@ -106,6 +106,7 @@ const (
 )
 
 // CommentTag defines comment tag type
+
 type CommentTag int
 
 // Enumerate all the comment tag types
