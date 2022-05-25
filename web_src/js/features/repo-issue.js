@@ -422,6 +422,25 @@ export function initRepoPullRequestReview() {
     }
   }
 
+  $(document).on('click', '#pull-approve-btn', function(e) {
+    const target = $('#branch-to-be-pulled').data("branch") 
+    const baseBranch = $('#pull-target-branch').data('branch');
+    var url = "https://jenkins.albourne.com/job/Pull-Request-Handler/buildWithParameters?token=f27c21a0c199573d069a0ceac86fa87f&ticketID="+target+"&baseBranch="+baseBranch+"&runType=approve"
+
+    if(baseBranch.includes("candidate")){
+      $.ajax({
+        type: "POST",
+        url: url,
+        crossDomain: true,
+        headers:{
+          "Content-Type": "application/json",
+          "Authorization": "Basic " + btoa("gsaramal:1141261920e5d0d529c6b47efbc354f19a"),
+          "Access-Control-Allow-Origin":"*",
+        }
+      })
+    }
+  })
+
   $(document).on('click', '.show-outdated', function (e) {
     e.preventDefault();
     const id = $(this).data('comment');

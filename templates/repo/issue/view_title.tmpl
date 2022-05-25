@@ -60,7 +60,7 @@
 			<span id="pull-desc-edit" style="display: none">
 				<div class="ui floating filter dropdown">
 					<div class="ui basic small button">
-						<span class="text">{{.i18n.Tr "repo.pulls.compare_compare"}}: {{$.HeadTarget}}</span>
+						<span class="text" id="branch-to-be-pulled" data-branch="{{$.HeadTarget}}">{{.i18n.Tr "repo.pulls.compare_compare"}}: {{$.HeadTarget}}</span>
 					</div>
 				</div>
 				{{svg "octicon-arrow-right"}}
